@@ -1,75 +1,62 @@
-:root {
-    --white: #fff;
-    --bg: #0a0a0a;
-    --shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
-}
-
 body {
-    font-size: 1.2rem;
-    font-family: 'Work Sans', sans-serif;
-    background-color: hsla(42, 41%, 71%, 0.493);
-    color: white;
-}
-
-.hero {
-    min-height: 100vh;
-    background-color: hsla(42, 41%, 71%, 0.493);
-}
-
-.hero h1 {
-    font-family: 'Sacramento', cursive;
-    font-size: 6rem;
-}
-
-.hero h4 {
-    font-size: 1.6rem;
-}
-
-.hero p {
-    font-size: 1.4rem;
-}
-
-/* Tombol */
-.hero a {
-    margin-top: 4px;
-    color: var(--white);
-    background-color: rgb(184, 184, 138);
-}
-
-.hero a:hover {
-    background-color: var(--white);
-    color: black;
-}
-
-/* Countdown Styles */
-.countdown-table {
+    font-family: Arial, sans-serif;
+    background-color: #f9f5eb;
     display: flex;
-    gap: 20px;
     justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+.title {
+    font-size: 32px;
+    font-weight: bold;
     margin-bottom: 20px;
 }
 
-.countdown-box {
-    background: rgb(184, 184, 138);
+.card {
+    background: #fdfbf7;
     padding: 20px;
-    border-radius: 25px;
-    text-align: center;
-    font-size: 2rem;
-    min-width: 100px;
-}
-
-.countdown-label {
-    font-size: 1rem;
-    margin-top: 5px;
-}
-
-.separator {
-    font-size: 2.5rem;
-    align-self: center;
-}
-
-.countdown-item {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    gap: 20px;
+}
+
+/* Google Maps Frame */
+.map {
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    border: 3px solid #c49a6c;
+}
+
+/* Info Text */
+.info {
+    text-align: left;
+}
+
+/* Tombol */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: 2px solid #c49a6c;
+    border-radius: 5px;
+    background: white;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: #c49a6c;
+    color: white;
 }
