@@ -78,79 +78,27 @@ body {
 body { margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
 .container {  width: 100%; max-width: 400px; text-align: center; padding: 50px 20px; position: relative; }
 .image-container img { width: 100%; height: 70%; max-width: 300px; border-radius: 90px 90px 0 0;  background: white; padding: 12px; border: 1px solid white;  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); }
-.couple-wrapper { display: flex; justify-content: center; align-items: center; margin-top: -20px; position: relative; }
+.couple-wrapper { display: flex; justify-content: center; align-items: center; margin-top: -20px; position: relative; } 
 .couple-name { background: #b48e62; display: inline-block; padding: 15px 60px; border-radius: 10px; font-family: 'Sacramento', cursive; font-size: 36px; z-index: 2; position: relative; white-space: nowrap; }
-.decorative-bar { width: 400px; height: 35px; background-color: #b48e62; border-radius: 5px; margin: 0 10px; }
+.decorative-bar { width: 400px; height: 35px; background-color: #b48e62; border-radius: 5px; margin: 0 10px; position: relative; display: flex; align-items: center; justify-content: center; }
 .guest-name { font-weight: bold; }
 .btn-open { background: white; border: 2px solid #e7c9ac; padding: 10px 30px; border-radius: 50px; cursor: pointer; font-size: 16px; color: black; transition: all 0.3s ease-in-out; display: inline-block; text-align: center; min-width: 120px; position: relative; }
 .btn-open::before { content: ""; position: absolute; top: -5px; left: -5px; right: -5px; bottom: -5px; border-radius: 50px; border: 2px solid white; }
-
+.flower-left, .flower-right { position: absolute; top: 50%; transform: translateY(-50%); width: 140px; }
+.flower-left { left: 170px; }
+.flower-right { right: 170px; }
 
 /*Page 2 - Kata Pengantar*/
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f8f1e8;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 60px;
-  max-width: 900px;
-  width: 100%;
-}
-
-.text-container {
-  text-align: center;
-  max-width: 400px;
-  margin-left: 40px;
-  margin-top: -50px; 
-}
-.salam {
-  font-size: 22px;
-  color: #333;
-  margin-bottom: 35px;
-  line-height: 2.3;
-  font-weight: bold;
-}
-.text {
-  font-size: 18px;
-  color: #333;
-  line-height: 2.3;
-}
-
-.image-container-page3 {
-  text-align: center;
-  margin-right: 40px;
-}
-
-.image-container-page3 img {
-  width: 250px;
-}
-
-.couple-name {
-  font-family: 'Sacramento', cursive;
-  font-size: 28px;
-  font-weight: bold;
-  color: #5a3d2b;
-  margin-top: 10px;
-  text-align: center;
-  background: none;
-}
-
-.flower {
-  position: absolute;
-  bottom: -50px;
-  left: 0;
-  width: 350px;
-}
-
+body { font-family: Arial, sans-serif; background-color: #f8f1e8; display: flex; flex-direction: column; align-items: center;  justify-content: center; text-align: center; }
+.container { display: flex; align-items: center; justify-content: center; gap: 60px; max-width: 900px; width: 100%; }
+.text-container { text-align: center; max-width: 400px; margin-left: 40px; margin-top: -50px; }
+.salam { font-size: 22px; color: #333; margin-bottom: 35px; line-height: 2.3; font-weight: bold; }
+.text { font-size: 18px; color: #333; line-height: 2.3; }
+.image-container-page3 { text-align: center; margin-right: 40px; }
+.image-container-page3 img { width: 250px; }
+.couple-name-page3 { font-family: 'Sacramento', cursive; font-size: 28px; font-weight: bold; color: #5a3d2b; margin-top: 10px; text-align: center; background: none; }
+.flower { position: absolute; bottom: -50px; left: 0; width: 350px; }
+  
 /*page 3 - surah ar-rum*/
 body { display: flex; justify-content: center; align-items: center; height: 100vh; background-color: hsla(42, 41%, 71%, 0.493); font-family: Arial, sans-serif; padding: 20px; box-sizing: border-box; text-align: center; }
 .page { display: none; padding:a 20px; }
