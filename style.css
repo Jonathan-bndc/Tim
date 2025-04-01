@@ -133,13 +133,15 @@ body {
     background: white;
     padding: 40px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Efek bayangan */
     max-width: 650px;
-    border: 3px solid #c8a045;
+    border: 3px solid #c8a045; /* Outline coklat */
+    outline: 30px solid white; /* Outline putih di luar border coklat */
     text-align: center;
 }
 
 h2 {
+    margin-top: 20px;
     font-size: 28px;
     font-weight: bold;
     font-style: italic;
@@ -151,12 +153,14 @@ h3 {
     font-weight: bold;
     font-style: italic;
     color: black;
+    margin-bottom: 80px;
 }
 
 .invitation-text {
-    font-size: 16px;
+    font-size: 20px;
     margin-bottom: 20px;
     color: #0a0a0a;
+    margin-bottom: 70px;
 }
 
 .event-section {
@@ -169,6 +173,7 @@ h3 {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: 30px;
     margin-bottom: 30px;
 }
 .event-left {
@@ -225,6 +230,11 @@ h3 {
 .event-detail i {
     margin-right: 8px;
     color: #c8a045;
+}
+.event-detail img {
+    width: 18px; /* Sesuaikan ukuran gambar */
+    height: 18px;
+    margin-right: 15px;
 }
 
 /* Gaya garis pemisah */
