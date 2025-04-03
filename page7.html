@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Gift</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fdf6ec;
+            text-align: center;
+            padding: 50px;
+            position: relative;
+        }
+        h2 {
+            font-family: 'Brush Script MT', cursive;
+            font-size: 32px;
+        }
+        .content {
+            max-width: 600px;
+            margin: auto;
+            font-size: 18px;
+            color: #444;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .button {
+            background-color: #c2a060;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            font-size: 18px;
+            cursor: pointer;
+            margin: 10px;
+            transition: 0.3s;
+        }
+        .button.active {
+            background-color: blue;
+            color: white;
+        }
+        .gift-box {
+            position: relative;
+            max-width: 400px;
+            margin: 30px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .gift-box.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .cashless-view {
+            position: relative;
+            max-width: 400px;
+            margin: 30px auto;
+            background: white;
+            padding: 20px; /* Adjusted padding for consistency */
+            border-radius: 15px;
+            box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2);
+            display: none; /* Hidden by default */
+        }
+        .decorative-flower {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 250px;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+    <h2>Wedding Gift</h2>
+    <p class="content">Your blessings mean the world to us. However, if giving is your way of expressing love, we would gratefully accept it, as it would add to our happiness.</p>
+    <div class="buttons">
+        <button class="button" id="cashlessButton" onclick="toggleView('cashless')">Cashless</button>
+        <button class="button" id="weddingGiftButton" onclick="toggleView('gift')">Wedding Gift</button>
+    </div>
+    
+    <div class="gift-box" id="giftBox">
+        <h3>Kirim Hadiah</h3>
+        <p>Anda dapat mengirim kado ke:<br>Jl. Bangau Sakti, Pekanbaru</p>
+        <button class="button" onclick="copyToClipboard()">Copy to Clipboard</button>
+    </div>
+
+    <div class="cashless-view" id="cashlessView">
+        <h3>Cashless Gift</h3>
+        <p>Thank you for considering a cashless gift! Your generosity is greatly appreciated.</p>
+    </div>
+
+    <img src="assets/flower-page7.png" alt="Decorative Flower" class="decorative-flower">
+
+    <script>
+        function toggleView(view) {
+            const giftBox = document.getElementById("giftBox");
+            const cashlessView = document.getElementById("cashlessView");
+            const cashlessButton = document.getElementById("cashlessButton");
+            const weddingGiftButton = document.getElementById("weddingGiftButton");
+
+            if (view === 'gift') {
+                giftBox.classList.add("show");
+                cashlessView.style.display = "none";
+                cashlessButton.classList.remove("active");
+                weddingGiftButton.classList.add("active");
+            } else {
+                cashlessView.style.display = "block";
+                giftBox.classList.remove("show");
+                weddingGiftButton.classList.remove("active");
+                cashlessButton.classList.add("active");
+            }
+        }
+
+        function copyToClipboard() {
+            const text = "Jl. Bangau Sakti, Pekanbaru";
+            navigator.clipboard.writeText(text).then(() => {
+                alert("Address copied to clipboard!");
+            });
+        }
+    </script>
+</body>
+</html>

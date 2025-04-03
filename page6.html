@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Memories</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fdf6ec;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+        .gallery {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .gallery-column {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .gallery img {
+            width: 200px;
+            height: 200px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            object-fit: cover;
+        }
+        .gallery img.large {
+            width: 280px;
+            height: 410px;
+        }
+        .decorative-flower {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 200px;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+    <h2>OUR MEMORIES</h2>
+    <div class="gallery">
+        <div class="gallery-column">
+            <img src="assets/IMG_6753.JPG" alt="Memory 1">
+            <img src="assets/IMG_6679.JPG" alt="Memory 2">
+        </div>
+        <img src="assets/IMG_6640.JPG" alt="Main Memory" class="large">
+        <div class="gallery-column">
+            <img src="assets/IMG_6672.JPG" alt="Memory 3">
+            <img src="assets/IMG_6615.JPG" alt="Memory 4">
+        </div>
+    </div>
+    <img src="assets/flower-page2.png" alt="Decorative Flower" class="decorative-flower">
+</body>
+</html>
