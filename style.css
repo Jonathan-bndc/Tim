@@ -88,6 +88,47 @@ body { margin: 0; padding: 0; display: flex; justify-content: center; align-item
 .flower-left { left: 170px; }
 .flower-right { right: 170px; }
 
+  
+  /* Untuk layar kecil (mobile) */
+  @media (max-width: 768px) {
+    .mobile-view {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      background: url('assets/IMG_6640.JPG') no-repeat center/cover;
+      height: 100vh;
+    }
+  
+    .desktop-view {
+      display: none;
+    }
+  
+    .img-full {
+      display: none; /* kita pakai background image aja di mobile */
+    }
+  
+    .invitation-card {
+      background: white;
+      padding: 1rem;
+      border-radius: 20px;
+      text-align: center;
+      margin: 1rem 0;
+      width: 90%;
+      max-width: 300px;
+    }
+  
+    .btn-open {
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      border: none;
+      padding: 10px 30px;
+      border-radius: 20px;
+    }
+  }
+  
+
 /*Page 2 - Kata Pengantar*/
 body { font-family: Arial, sans-serif; background-color: #f8f1e8; display: flex; flex-direction: column; align-items: center;  justify-content: center; text-align: center; }
 .container { display: flex; align-items: center; justify-content: center; gap: 60px; max-width: 900px; width: 100%; }

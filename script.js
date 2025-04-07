@@ -21,3 +21,4 @@ startCountdown('August 29, 2025 10:00:00');
 function goToPage2() {
     window.location.href = "page2.html"; // Ganti dengan URL halaman dua
 }
+
