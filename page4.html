@@ -5,7 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Undangan Pernikahan</title>
     <link rel="stylesheet" href="style.css">
-</head>
+    <style>
+        .btn-next,
+        .btn-prev {
+          position: fixed;
+          bottom: 20px;
+          background-color: #b48e62;
+          color: white;
+          border: none;
+          border-radius: 50px;
+          padding: 0.6rem 1.2rem;
+          font-size: 0.95rem;
+          cursor: pointer;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          z-index: 100;
+        }
+    
+        .btn-next {
+          right: 20px;
+          background-color: #b48e62;
+          color: white;
+        }
+    
+        .btn-prev {
+          left: 20px;
+          background-color: #999;
+          color: white;
+        }
+    
+        .btn-next:hover {
+          background-color: #777;
+        }
+        .btn-prev:hover {
+          background-color: #a07b53;
+        }
+        </style>
 <body>
     <img src="assets/flower-left.png" alt="bunga kiri" class="flower"> 
     <img src="assets/flower-right.png" alt="bunga kanan" class="flower"> 
@@ -56,5 +90,16 @@
             </div>
         </div>
     </div>
+    <button class="btn-prev" onclick="goToPrevious()">Previous</button>
+    <button class="btn-next" onclick="goToNext()">Next</button>
+
+    <script>
+        function goToPrevious() {
+        window.location.href = "page3.html";
+        }
+        function goToNext() {
+        window.location.href = "page5.html";
+        }
+    </script>
   </body>  
 </html>

@@ -73,6 +73,27 @@
             width: 250px;
             opacity: 0.6;
         }
+      .btn-nav {
+      position: fixed;
+      bottom: 20px;
+      padding: 0.6rem 1.2rem;
+      font-size: 0.9rem;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      z-index: 100;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .btn-prev {
+      left: 20px;
+      background-color: #999;
+      color: white;
+    }
+
+    .btn-prev:hover {
+      background-color: #777;
+    }
     </style>
 </head>
 <body>
@@ -95,7 +116,9 @@
     </div>
 
     <img src="assets/flower-page7.png" alt="Decorative Flower" class="decorative-flower">
-
+    
+    <button class="btn-nav btn-prev" onclick="goToPrevious()">Previous</button>
+ 
     <script>
         function toggleView(view) {
             const giftBox = document.getElementById("giftBox");
@@ -122,6 +145,11 @@
                 alert("Address copied to clipboard!");
             });
         }
+        function goToPrevious() {
+            window.location.href = "page6.html";
+        }
+    
+        
     </script>
 </body>
 </html>
