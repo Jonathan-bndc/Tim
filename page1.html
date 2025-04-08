@@ -4,11 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cover Undangan</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css/"> 
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Work+Sans:wght@100..900&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+    .container {  width: 100%; max-width: 400px; text-align: center; padding: 50px 20px; position: relative; }
+    .image-container img { width: 100%; height: 70%; max-width: 300px; border-radius: 90px 90px 0 0;  background: white; padding: 12px; border: 1px solid white;  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); }
+    .couple-wrapper { display: flex; justify-content: center; align-items: center; margin-top: -20px; position: relative; } 
+    .couple-name { background: #b48e62; display: inline-block; padding: 15px 60px; border-radius: 10px; font-family: 'Sacramento', cursive; font-size: 36px; z-index: 2; position: relative; white-space: nowrap; }
+    .decorative-bar { width: 400px; height: 35px; background-color: #b48e62; border-radius: 5px; margin: 0 10px; position: relative; display: flex; align-items: center; justify-content: center; }
+    .guest-name { font-weight: bold; }
+    .btn-open { background: white; border: 2px solid #e7c9ac; padding: 10px 30px; border-radius: 50px; cursor: pointer; font-size: 16px; color: black; transition: all 0.3s ease-in-out; display: inline-block; text-align: center; min-width: 120px; position: relative; }
+    .btn-open::before { content: ""; position: absolute; top: -5px; left: -5px; right: -5px; bottom: -5px; border-radius: 50px; border: 2px solid white; }
+    .flower-left, .flower-right { position: absolute; top: 50%; transform: translateY(-50%); width: 140px; }
+    .flower-left { left: 170px; }
+    .flower-right { right: 170px; }
+  </style>
 </head>
 <body style="background:hsla(42, 41%, 71%, 0.493)">
   <div class="container">
@@ -32,6 +46,10 @@
       <button class="btn-open" onclick="goToPage2()">Buka</button>
     </div>
   </div>
-  <script src="script.js"></script>
-</body>
+  <script>
+    function goToPage2() {
+    window.location.href = "page2.html"; // Ganti dengan URL halaman dua
+  }
+  </script>
+  </body>
 </html>
