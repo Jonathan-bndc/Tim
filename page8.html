@@ -6,99 +6,212 @@
   <title>Page 8 - Terima Kasih</title>
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    /* Reset & Umum */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Work Sans', sans-serif;
     }
 
     body {
+      font-family: 'Work Sans', sans-serif;
       background-color: #fff;
       color: #333;
-      text-align: center;
-      padding: 2rem 1.5rem 5rem;
-      position: relative;
       min-height: 100vh;
+      position: relative;
     }
 
-    .img-box {
+    /* ================= MOBILE VERSION ================= */
+    .mobile-version {
+      display: block;
+      text-align: center;
+      padding: 2rem 1.5rem 5rem;
+    }
+
+    .mobile-version .img-box {
       background-color: #f0ebe4;
-      padding: 10px;
-      border-radius: 20px;
+      padding: 6px;
+      border-radius: 12px;
       display: inline-block;
       margin-bottom: 1.5rem;
     }
 
-    .img-box img {
-      width: 240px;
+    .mobile-version .img-box img {
+      width: 180px;
       height: auto;
-      border-radius: 10px;
+      border-radius: 6px;
     }
 
-    .message {
+    .mobile-version .message {
       font-size: 0.95rem;
       line-height: 1.6;
       max-width: 320px;
       margin: 0 auto 2rem;
     }
 
-    .names {
+    .mobile-version .names {
       margin-top: 2rem;
       line-height: 1.4;
     }
 
-    /* Tombol Previous */
+    /* ================= DESKTOP VERSION ================= */
+    .desktop-version {
+      display: none;
+      font-family: 'Georgia', serif;
+      background-color: #fdf4e3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .content-wrapper {
+      display: flex;
+      gap: 40px;
+      max-width: 850px;
+      width: 100%;
+      align-items: stretch;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background-color: #e8d9c6;
+      border-radius: 24px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 300px;
+    }
+
+    .left-card {
+      flex: 1;
+      max-width: 35%;
+      min-width: 220px;
+    }
+
+    .left-card img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover;
+    }
+
+    .right-card {
+      flex: 2;
+      max-width: 65%;
+      min-width: 300px;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 40px;
+      display: flex;
+    }
+
+    .right-card p {
+      font-size: 16px;
+      color: #333;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .signature {
+      text-align: right;
+      font-family: 'Brush Script MT', cursive;
+      font-size: 24px;
+      margin-top: 20px;
+      width: 100%;
+      color: #222;
+    }
+
+    /* =============== BUTTON ================== */
     .btn-nav {
       position: fixed;
       bottom: 20px;
+      left: 20px;
       padding: 0.6rem 1.2rem;
       font-size: 0.9rem;
       border: none;
       border-radius: 50px;
-      cursor: pointer;
-      z-index: 100;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-
-    .btn-prev {
-      left: 20px;
       background-color: #999;
       color: white;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+      z-index: 100;
     }
 
-    .btn-prev:hover {
+    .btn-nav:hover {
       background-color: #777;
+    }
+
+    /* ============== RESPONSIVE RULE ============== */
+    @media (min-width: 769px) {
+      .mobile-version {
+        display: none;
+      }
+      .desktop-version {
+        display: flex;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .desktop-version {
+        display: none;
+      }
+      .mobile-version {
+        display: block;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="img-box">
-    <img src="assets/bunga-page8.png" alt="Bunga Ucapan">
+  <!-- ====== MOBILE VERSION ====== -->
+  <div class="mobile-version">
+    <div class="img-box">
+      <img src="assets/flower-page8.png" alt="Bunga Ucapan">
+    </div>
+
+    <div class="message">
+      “We would like to thank you for<br>
+      sharing in our wedding celebration.<br>
+      We are truly grateful for your<br>
+      presence, warmth, and kind wishes.<br>
+      We look forward to our future<br>
+      together and creating more wonderful<br>
+      memories with you.”<br><br>
+      Atas kehadiran dan do’a restunya<br>
+      kami ucapkan terima kasih.<br>
+      Much Love,
+    </div>
+
+    <div class="names">
+      Jonathan<br>
+      &<br>
+      Aisyah
+    </div>
   </div>
 
-  <div class="message">
-    “We would like to thank you for<br>
-    sharing in our wedding celebration.<br>
-    We are truly grateful for your<br>
-    presence, warmth, and kind wishes.<br>
-    We look forward to our future<br>
-    together and creating more wonderful<br>
-    memories with you.”<br><br>
-    Atas kehadiran dan do’a restunya<br>
-    kami ucapkan terima kasih.<br>
-    Much Love,
-  </div>
-
-  <div class="names">
-    Jonathan<br>
-    &<br>
-    Aisyah
+  <!-- ====== DESKTOP VERSION ====== -->
+  <div class="desktop-version">
+    <div class="content-wrapper">
+      <div class="card left-card">
+        <img src="assets/flower-page8.png" alt="Bouquet">
+      </div>
+      <div class="card right-card">
+        <p>
+          “We would like to thank you for sharing in our wedding celebration. We are truly grateful for your presence, warmth, and kind wishes. We look forward to our future together and creating more wonderful memories with you.”<br><br>
+          Atas kehadiran dan do’a restunya kami ucapkan terima kasih.<br>
+          Much Love,
+        </p>
+        <div class="signature">Jonathan & Aisyah</div>
+      </div>
+    </div>
   </div>
 
   <!-- Tombol Previous -->
-  <button class="btn-nav btn-prev" onclick="goToPrevious()">Previous</button>
+  <button class="btn-nav" onclick="goToPrevious()">Previous</button>
 
   <script>
     function goToPrevious() {
