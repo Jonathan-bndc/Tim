@@ -28,6 +28,38 @@
       display: block;
       max-width: 700px;
       width: 100%;
+      margin-top: 80px;
+      position: relative;
+    }
+
+    /* Garis Silang Dekoratif di Kiri Atas */
+    .corner-separator {
+      position: absolute;
+      top: -30px;
+      left: -30px;
+      width: 100px;
+      height: 100px;
+      z-index: 10;
+    }
+
+    .corner-separator::before,
+    .corner-separator::after {
+      content: '';
+      position: absolute;
+      width: 100px;
+      height: 2px;
+      background-color: #c8a045;
+      top: 50%;
+      left: 0;
+      transform-origin: left center;
+    }
+
+    .corner-separator::before {
+      transform: rotate(45deg);
+    }
+
+    .corner-separator::after {
+      transform: rotate(-45deg);
     }
 
     /* DESKTOP STYLE */
@@ -39,6 +71,7 @@
       outline: 30px solid white;
       padding: 40px;
       position: relative;
+      margin-top: 30px;
     }
 
     .desktop h2,
@@ -47,6 +80,7 @@
       font-style: italic;
       color: black;
       text-align: center;
+      line-height: 1.8;
     }
 
     .desktop h2 {
@@ -59,16 +93,20 @@
     }
 
     .invitation-text {
-      font-size: 20px;
+      font-size: 18px;
       margin-bottom: 50px;
       color: #0a0a0a;
       text-align: center;
+      line-height: 1.7;
+      margin-top: 30px;
+      margin-bottom: 80px;
     }
 
     .event {
       display: flex;
       justify-content: space-between;
       margin: 20px 0;
+      transform: translateX(90px);
     }
 
     .event-left {
@@ -125,22 +163,24 @@
     .separator {
       height: 2px;
       background: #c8a045;
-      margin: 20px 0;
+      margin: 80px 0;
     }
 
     .flower {
       position: absolute;
-      width: 120px;
-      z-index: 10;
-      top: -60px;
+      width: 200px;
+      z-index: 5;
+      top: -10px;
     }
 
     .flower-left {
-      left: 0;
+      left: -80px;
+      top: -80px;
     }
 
     .flower-right {
-      right: 0;
+      right: -80px;
+      top: -80px;
     }
 
     /* MOBILE WRAPPER */
@@ -234,13 +274,16 @@
 </head>
 <body>
 
-  <!-- Dekorasi -->
-  <img src="assets/flower-left.png" alt="Bunga Kiri" class="flower flower-left">
-  <img src="assets/flower-right.png" alt="Bunga Kanan" class="flower flower-right">
-
   <!-- DESKTOP -->
   <div class="desktop-wrapper">
+    <!-- Separator Silang di Kiri Atas -->
+    <div class="corner-separator"></div>
+
     <div class="desktop">
+      <!-- Dekorasi Bunga -->
+      <img src="assets/flower-left.png" alt="Bunga Kiri" class="flower flower-left">
+      <img src="assets/flower-right.png" alt="Bunga Kanan" class="flower flower-right">
+
       <h2>Bismillahirrahmanirrahim</h2>
       <h3>Assalamu’alaikum Warahmatullahi Wabarakatuh</h3>
       <p class="invitation-text">

@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Undangan Responsif</title>
 
-  <!-- Bootstrap dan Font -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Work+Sans:wght@100..900&display=swap" rel="stylesheet">
 
@@ -21,13 +20,17 @@
       background: hsla(42, 41%, 71%, 0.493);
     }
 
-    /* ==================== DESKTOP STYLE ==================== */
     .desktop-wrapper {
       display: block;
     }
 
-    .desktop-wrapper .container {
-      max-width: 400px;
+    .desktop-wrapper {
+      text-align: center;
+      padding: 50px 20px;
+      margin: 0 auto;
+    }
+    .container {
+      width: 100%;
       text-align: center;
       padding: 50px 20px;
       margin: 0 auto;
@@ -49,44 +52,48 @@
       justify-content: center;
       align-items: center;
       margin-top: -20px;
-      position: relative;
-    }
-
-    .couple-name {
-      background: #b48e62;
-      display: inline-block;
-      padding: 15px 60px;
-      border-radius: 10px;
-      font-family: 'Sacramento', cursive;
-      font-size: 36px;
-      z-index: 2;
-      position: relative;
-      white-space: nowrap;
+      margin-bottom: 30px;
+      gap: 20px;
     }
 
     .decorative-bar {
-      width: 400px;
-      height: 35px;
       background-color: #b48e62;
-      border-radius: 5px;
-      margin: 0 10px;
+      height: 40px;
+      width: 100%;
+      max-width:1000px;
+      border-radius: 10px;
       position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
     }
-
-    .flower-left, .flower-right {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 140px;
+    .flower-left {
+      width: 100px;
+      height: auto;
+      margin-left: 90px; /* Geser lebih ke kiri */
     }
 
-    .flower-left { left: 170px; }
-    .flower-right { right: 170px; }
+    .flower-right {
+      width: 100px;
+      height: auto;
+      margin-right: 90px; /* Geser lebih ke kanan */
+    }
 
-    .guest-name { font-weight: bold; }
+    .couple-name {
+      background: #b48e62;
+      color: #000;
+      display: inline-block;
+      padding: 10px 80px;
+      border-radius: 12px;
+      font-family: 'Sacramento', cursive;
+      font-size: 38px;
+      white-space: nowrap;
+      z-index: 2;
+    }
+
+    .guest-name {
+      font-weight: bold;
+    }
 
     .btn-open {
       background: white;
@@ -198,11 +205,11 @@
 
         <div class="couple-wrapper">
           <div class="decorative-bar">
-            <img src="assets/flower-left.png" alt="Bunga" class="flower-left">
+            <img src="assets/flower-left.png" alt="Bunga Kiri" class="flower-left">
           </div> 
           <h2 class="couple-name">Jonathan & Aisyah</h2>
           <div class="decorative-bar">
-            <img src="assets/flower-right.png" alt="Bunga" class="flower-right">
+            <img src="assets/flower-right.png" alt="Bunga Kanan" class="flower-right">
           </div> 
         </div>
 
