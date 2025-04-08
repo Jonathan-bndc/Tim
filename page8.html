@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Page 8 - Terima Kasih</title>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Work Sans', sans-serif;
+    }
+
+    body {
+      background-color: #fff;
+      color: #333;
+      text-align: center;
+      padding: 2rem 1.5rem 5rem;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    .img-box {
+      background-color: #f0ebe4;
+      padding: 10px;
+      border-radius: 20px;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+    }
+
+    .img-box img {
+      width: 240px;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .message {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      max-width: 320px;
+      margin: 0 auto 2rem;
+    }
+
+    .names {
+      margin-top: 2rem;
+      line-height: 1.4;
+    }
+
+    /* Tombol Previous */
+    .btn-nav {
+      position: fixed;
+      bottom: 20px;
+      padding: 0.6rem 1.2rem;
+      font-size: 0.9rem;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      z-index: 100;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .btn-prev {
+      left: 20px;
+      background-color: #999;
+      color: white;
+    }
+
+    .btn-prev:hover {
+      background-color: #777;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="img-box">
+    <img src="assets/bunga-page8.png" alt="Bunga Ucapan">
+  </div>
+
+  <div class="message">
+    “We would like to thank you for<br>
+    sharing in our wedding celebration.<br>
+    We are truly grateful for your<br>
+    presence, warmth, and kind wishes.<br>
+    We look forward to our future<br>
+    together and creating more wonderful<br>
+    memories with you.”<br><br>
+    Atas kehadiran dan do’a restunya<br>
+    kami ucapkan terima kasih.<br>
+    Much Love,
+  </div>
+
+  <div class="names">
+    Jonathan<br>
+    &<br>
+    Aisyah
+  </div>
+
+  <!-- Tombol Previous -->
+  <button class="btn-nav btn-prev" onclick="goToPrevious()">Previous</button>
+
+  <script>
+    function goToPrevious() {
+      window.location.href = "page7.html";
+    }
+  </script>
+
+</body>
+</html>
