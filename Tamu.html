@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daftar Tamu</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f3ecd9;
+  }
+  
+  .container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    background-color: #ffffff;
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-radius: 40px;
+    margin: 10px;
+    box-shadow: 0 0 0 1px #d8b4fe dashed;
+  }
+  
+  .menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    height: 100%;
+  }
+  
+  .icon {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .icon img {
+    width: 30px;
+    height: 30px;
+    filter: brightness(0);
+  }
+  
+  .icon.active {
+    background-color: #eee9d1;
+    border-radius: 50%;
+    padding: 10px;
+  }
+  
+  /* Content */
+  .content {
+    flex: 1;
+    background-color: #d9d9d9;
+    border-radius: 0 0 0 0;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .content h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .cards {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .card {
+    background-color: #ffffff;
+    flex: 1;
+    border-radius: 30px;
+    padding: 30px;
+    min-height: 300px;
+  }
+  
+  .card ol li {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+  
+  </style>
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="menu">
+        <button class="icon"><img src="https://img.icons8.com/ios-filled/50/home.png" alt="Home"></button>
+        <button class="icon active"><img src="https://img.icons8.com/ios-filled/50/database.png" alt="Database"></button>
+        <button class="icon"><img src="https://img.icons8.com/ios-filled/50/user-male-circle.png" alt="User"></button>
+        <button class="icon logout"><img src="https://img.icons8.com/ios-filled/50/logout-rounded.png" alt="Logout"></button>
+      </div>
+    </aside>
+
+    <main class="content">
+      <h1>Daftar Tamu</h1>
+      <div class="cards">
+        <div class="card">
+          <ol>
+            <li><strong>Jeki</strong></li>
+            <li><strong>Sakura</strong></li>
+            <li><strong>Alucard</strong></li>
+            <li><strong>Dino</strong></li>
+          </ol>
+        </div>
+        <div class="card">
+          <!-- kosong -->
+        </div>
+        <button class="btn-prev" onclick="goToPrevious2()">Previous</button>
+        <button class="btn-next" onclick="goToPage4()">Next</button>
+      </div>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
