@@ -1,46 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Memories</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #fdf6ec;
-            text-align: center;
-            padding: 20px;
-            position: relative;
-        }
-        .gallery {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        .gallery-column {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        .gallery img {
-            width: 200px;
-            height: 200px;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-            object-fit: cover;
-        }
-        .gallery img.large {
-            width: 280px;
-            height: 410px;
-        }
-        .decorative-flower {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 200px;
-            opacity: 0.6;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Memories</title>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Work Sans', sans-serif;
+    }
+
+    body {
+      background-color: #fdf6ec;
+      color: #333;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    /* === DESKTOP STYLING === */
+    .desktop-wrapper {
+      display: none;
+    }
+
+    .desktop-gallery {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .desktop-column {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .desktop-gallery img {
+      width: 200px;
+      height: 200px;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+      object-fit: cover;
+    }
+
+    .desktop-gallery img.large {
+      width: 280px;
+      height: 410px;
+    }
+
+    .decorative-flower {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 200px;
+      opacity: 0.6;
+    }
+
+    /* Tombol desktop */
     .btn-next, .btn-prev {
       position: fixed;
       bottom: 20px;
@@ -57,48 +78,148 @@
 
     .btn-next {
       right: 20px;
-      background-color: #b48e62;
-      color: white;
     }
 
     .btn-prev {
       left: 20px;
       background-color: #999;
-      color: white;
     }
 
     .btn-next:hover {
       background-color: #777;
     }
+
     .btn-prev:hover {
       background-color: #a07b53;
     }
-        </style>
+
+    /* === MOBILE STYLING === */
+    .mobile-wrapper {
+      display: none;
+    }
+
+    .mobile-gallery {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .gallery-row {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .memori1 { width: 90px; }
+    .memori2, .memori3 { width: 180px; }
+    .memori4 { width: 90px; }
+    .memori5, .memori6 {
+      width: 135px;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .flower-bottom {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 180px;
+      pointer-events: none;
+    }
+
+    .btn-nav {
+      position: fixed;
+      bottom: 20px;
+      padding: 0.6rem 1.2rem;
+      font-size: 0.9rem;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      z-index: 100;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .btn-nav.btn-prev {
+      left: 20px;
+      background-color: #999;
+      color: white;
+    }
+
+    .btn-nav.btn-next {
+      right: 20px;
+      background-color: #b48e62;
+      color: white;
+    }
+
+    .btn-nav.btn-prev:hover {
+      background-color: #777;
+    }
+
+    .btn-nav.btn-next:hover {
+      background-color: #a07b53;
+    }
+
+    /* RESPONSIVE CONTROL */
+    @media (min-width: 768px) {
+      .desktop-wrapper { display: block; }
+    }
+
+    @media (max-width: 767px) {
+      .mobile-wrapper { display: block; }
+    }
+  </style>
 </head>
 <body>
+
+  <!-- DESKTOP VERSION -->
+  <div class="desktop-wrapper">
     <h2>OUR MEMORIES</h2>
-    <div class="gallery">
-        <div class="gallery-column">
-            <img src="assets/IMG_6753.JPG" alt="Memory 1">
-            <img src="assets/IMG_6679.JPG" alt="Memory 2">
-        </div>
-        <img src="assets/IMG_6640.JPG" alt="Main Memory" class="large">
-        <div class="gallery-column">
-            <img src="assets/IMG_6672.JPG" alt="Memory 3">
-            <img src="assets/IMG_6615.JPG" alt="Memory 4">
-        </div>
+    <div class="desktop-gallery">
+      <div class="desktop-column">
+        <img src="assets/IMG_6753.JPG" alt="Memory 1">
+        <img src="assets/IMG_6679.JPG" alt="Memory 2">
+      </div>
+      <img src="assets/IMG_6640.JPG" alt="Main Memory" class="large">
+      <div class="desktop-column">
+        <img src="assets/IMG_6672.JPG" alt="Memory 3">
+        <img src="assets/IMG_6615.JPG" alt="Memory 4">
+      </div>
     </div>
     <img src="assets/flower-page2.png" alt="Decorative Flower" class="decorative-flower">
     <button class="btn-prev" onclick="goToPrevious()">Previous</button>
     <button class="btn-next" onclick="goToNext()">Next</button>
+  </div>
 
-    <script>
-        function goToPrevious() {
-        window.location.href = "page5.html";
-        }
-        function goToNext() {
-        window.location.href = "page7.html";
-        }
-    </script>
+  <!-- MOBILE VERSION -->
+  <div class="mobile-wrapper">
+    <h1>Our Memories</h1>
+    <div class="mobile-gallery">
+      <div class="gallery-row">
+        <img src="assets/IMG_6615.JPG" alt="Memori 1" class="memori1">
+        <img src="assets/IMG_6615.jpg" alt="Memori 2" class="memori2">
+      </div>
+      <div class="gallery-row">
+        <img src="assets/IMG_6615.jpg" alt="Memori 3" class="memori3">
+        <img src="assets/IMG_6615.jpg" alt="Memori 4" class="memori4">
+      </div>
+      <div class="gallery-row">
+        <img src="assets/IMG_6615.jpg" alt="Memori 5" class="memori5">
+        <img src="assets/IMG_6615.jpg" alt="Memori 6" class="memori6">
+      </div>
+    </div>
+    <img src="assets/flower-page2.png" alt="Bunga Dekorasi" class="flower-bottom" />
+    <button class="btn-nav btn-prev" onclick="goToPrevious()">Previous</button>
+    <button class="btn-nav btn-next" onclick="goToNext()">Next</button>
+  </div>
+
+  <script>
+    function goToPrevious() {
+      window.location.href = "page5.html";
+    }
+    function goToNext() {
+      window.location.href = "page7.html";
+    }
+  </script>
 </body>
 </html>

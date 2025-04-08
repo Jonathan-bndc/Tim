@@ -1,14 +1,118 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kata Pengantar</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Work+Sans:wght@100..900&display=swap" rel="stylesheet">
-    <style>
-    .btn-next,
-    .btn-prev {
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kata Pengantar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Work+Sans:wght@100..900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Work Sans', sans-serif;
+      background-color: #f8f1e8;
+      color: #333;
+      text-align: center;
+      min-height: 100vh;
+      padding-bottom: 5rem;
+    }
+
+    /* ==== Versi Desktop ==== */
+    .desktop-view {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 60px;
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    .text-container-desktop {
+      max-width: 400px;
+    }
+
+    .salam-desktop {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 35px;
+      line-height: 2;
+    }
+
+    .text-desktop {
+      font-size: 18px;
+      line-height: 2;
+    }
+
+    .image-container-desktop img {
+      width: 250px;
+      border-radius: 15px;
+    }
+
+    .couple-name-desktop {
+      font-family: 'Sacramento', cursive;
+      font-size: 28px;
+      font-weight: bold;
+      color: #5a3d2b;
+      margin-top: 10px;
+    }
+
+    /* ==== Versi Mobile ==== */
+    .mobile-view {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1.5rem;
+    }
+
+    .opening-text {
+      margin-bottom: 1.5rem;
+    }
+
+    .opening-text h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .opening-text p {
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .couple-names h1 {
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+
+    .couple-names span {
+      display: block;
+      font-size: 1.3rem;
+      margin: 0.3rem 0;
+    }
+
+    .quote {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      max-width: 300px;
+      margin-top: 1.5rem;
+      color: #444;
+    }
+
+    .quote cite {
+      display: block;
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      font-style: normal;
+      font-weight: 500;
+    }
+
+    /* ==== Tombol Navigasi ==== */
+    .btn-next, .btn-prev {
       position: fixed;
       bottom: 20px;
       background-color: #b48e62;
@@ -22,39 +126,63 @@
       z-index: 100;
     }
 
-    .btn-next {
-      right: 20px;
-      background-color: #b48e62;
-      color: white;
+    .btn-next { right: 20px; }
+    .btn-prev { left: 20px; }
+
+    .btn-next:hover { background-color: #777; }
+    .btn-prev:hover { background-color: #a07b53; }
+
+    /* ======= Responsive Rules ======= */
+    @media (max-width: 768px) {
+      .desktop-view { display: none; }
+      .mobile-view { display: flex; }
     }
 
-    .btn-prev {
-      left: 20px;
-      background-color: #999;
-      color: white;
+    @media (min-width: 769px) {
+      .desktop-view { display: flex; }
+      .mobile-view { display: none; }
     }
-
-    .btn-next:hover {
-      background-color: #777;
-    }
-    .btn-prev:hover {
-      background-color: #a07b53;
-    }
-    </style>
-  </head>
+  </style>
+</head>
 <body>
-  <div class="container">
-    <div class="text-container">
-      <p class="salam">Assalamualaikum Wr. Wb</p>
-      <p class="text">Tanpa mengurangi rasa hormat kami bermaksud untuk mengundang Bapak/Ibu/Saudara/i pada acara pernikahan kami.</p>
+
+  <!-- ==== Desktop Version ==== -->
+  <div class="desktop-view">
+    <div class="text-container-desktop">
+      <p class="salam-desktop">Assalamu’alaikum Warahmatullahi Wabarakatuh</p>
+      <p class="text-desktop">Tanpa mengurangi rasa hormat kami bermaksud untuk mengundang Bapak/Ibu/Saudara/i pada acara pernikahan kami.</p>
     </div>
-    <div class="image-container-page3">
+    <div class="image-container-desktop">
       <img src="assets/IMG_6679.JPG" alt="Jonathan & Aisyah">
-      <p class="couple-name-page3">Jonathan & Aisyah</p>
+      <p class="couple-name-desktop">Jonathan & Aisyah</p>
     </div>
   </div>
-  <img src="assets/flower-page2.png" class="flower" alt="Flower">
-  
+
+  <!-- ==== Mobile Version ==== -->
+  <div class="mobile-view">
+    <div class="opening-text">
+      <h2>Assalamu’alaikum Warahmatullahi Wabarakatuh</h2>
+      <p>Tanpa mengurangi rasa hormat kami bermaksud<br>
+        untuk mengundang Bapak/Ibu/Saudara/i pada<br>
+        acara pernikahan kami.</p>
+    </div>
+
+    <div class="couple-names">
+      <h1>Jonathan</h1>
+      <span>&</span>
+      <h1>Aisyah</h1>
+    </div>
+
+    <div class="quote">
+      “Dan di antara tanda-tanda kebesaran-Nya ialah Dia menciptakan pasangan-pasangan
+      untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya,
+      dan Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian
+      itu benar-benar terdapat tanda-tanda bagi kaum yang berpikir.”
+      <cite>(Ar-Rum : 21)</cite>
+    </div>
+  </div>
+
+  <!-- Tombol Navigasi -->
   <button class="btn-prev" onclick="goToPrevious()">Previous</button>
   <button class="btn-next" onclick="goToNext()">Next</button>
 
@@ -62,11 +190,11 @@
     function goToPrevious() {
       window.location.href = "page1.html";
     }
+
     function goToNext() {
       window.location.href = "page3.html";
     }
   </script>
 
- 
 </body>
 </html>

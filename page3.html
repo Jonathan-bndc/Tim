@@ -1,68 +1,207 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Surah Ar-Rum</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Page 3 - Mempelai</title>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
-    .btn-next,
-    .btn-prev {
-      position: fixed;
-      bottom: 20px;
-      background-color: #b48e62;
-      color: white;
-      border: none;
-      border-radius: 50px;
-      padding: 0.6rem 1.2rem;
-      font-size: 0.95rem;
-      cursor: pointer;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      z-index: 100;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Work Sans', sans-serif;
     }
 
-    .btn-next {
-      right: 20px;
-      background-color: #b48e62;
+    body {
+      background-color: #fff;
+      color: #333;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    /* ========== DESKTOP VERSION (Kutipan Ayat) ========== */
+    .desktop-view {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: hsla(42, 41%, 71%, 0.493);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .card-container {
+      padding: 20px;
+      border-radius: 25px;
+      background-color: #fff;
+      border: 4px solid #fff;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .card {
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 18px;
+      width: 550px;
+      text-align: center;
+      border: 2px solid #c4a77d;
+    }
+
+    .card h3 {
+      margin: 0;
+      font-size: 22px;
+      color: #444;
+    }
+
+    .card p {
+      font-size: 20px;
+      color: #333;
+      line-height: 2.2;
+      margin-top: 15px;
+    }
+
+    /* ========== MOBILE VERSION (Profil Mempelai) ========== */
+    .mobile-view {
+      display: none;
+      padding: 2rem 1rem 5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    h3 {
+      font-weight: 500;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .bride, .groom {
+      margin-bottom: 2rem;
+    }
+
+    .bride img, .groom img {
+      width: 180px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 0.8rem;
+    }
+
+    .name-info {
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+
+    .divider {
+      width: 60%;
+      height: 4px;
+      background: #b48e62;
+      margin: 2rem auto;
+      border-radius: 2px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    /* ========== Tombol Navigasi ========== */
+    .btn-nav, .btn-next, .btn-prev {
+      position: fixed;
+      bottom: 20px;
+      padding: 0.6rem 1.2rem;
+      font-size: 0.9rem;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      z-index: 100;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
       color: white;
     }
 
     .btn-prev {
       left: 20px;
       background-color: #999;
-      color: white;
+    }
+
+    .btn-next {
+      right: 20px;
+      background-color: #b48e62;
+    }
+
+    .btn-prev:hover {
+      background-color: #777;
     }
 
     .btn-next:hover {
-      background-color: #777;
-    }
-    .btn-prev:hover {
       background-color: #a07b53;
     }
-    </style>
+
+    /* ========== RESPONSIVE HANDLING ========== */
+    @media (max-width: 768px) {
+      .desktop-view { display: none; }
+      .mobile-view { display: flex; }
+    }
+
+    @media (min-width: 769px) {
+      .desktop-view { display: flex; }
+      .mobile-view { display: none; }
+    }
+  </style>
 </head>
 <body>
-  <div class="card-container">
-    <div class="card">
+
+  <!-- DESKTOP VIEW -->
+  <div class="desktop-view">
+    <div class="card-container">
+      <div class="card">
         <h3>(Ar-Rum : 21)</h3>
         <p>
-            "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan
-            untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya,
-            dan Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian
-            itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir."
+          "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan
+          untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya,
+          dan Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian
+          itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir."
         </p>
+      </div>
     </div>
-</div>
-<button class="btn-prev" onclick="goToPrevious()">Previous</button>
+  </div>
+
+  <!-- MOBILE VIEW -->
+  <div class="mobile-view">
+    <div class="bride">
+      <h3>The Bride</h3>
+      <img src="assets/bride.jpg" alt="Aisyah" />
+      <div class="name-info">
+        <strong>Aisyah Septiani</strong><br>
+        Anak dari Pasangan Bapak<br>Aditia dan Ibu Alya
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="groom">
+      <h3>The Groom</h3>
+      <img src="assets/groom.jpg" alt="Jonathan" />
+      <div class="name-info">
+        <strong>Jonathan Benedict</strong><br>
+        Anak dari Pasangan Bapak<br>Nicholas dan Ibu Herma
+      </div>
+    </div>
+  </div>
+
+  <!-- Tombol Navigasi -->
+  <button class="btn-prev" onclick="goToPrevious()">Previous</button>
   <button class="btn-next" onclick="goToNext()">Next</button>
 
   <script>
     function goToPrevious() {
       window.location.href = "page2.html";
     }
+
     function goToNext() {
       window.location.href = "page4.html";
     }
   </script>
+
 </body>
 </html>

@@ -1,105 +1,313 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Undangan Pernikahan</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        .btn-next,
-        .btn-prev {
-          position: fixed;
-          bottom: 20px;
-          background-color: #b48e62;
-          color: white;
-          border: none;
-          border-radius: 50px;
-          padding: 0.6rem 1.2rem;
-          font-size: 0.95rem;
-          cursor: pointer;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-          z-index: 100;
-        }
-    
-        .btn-next {
-          right: 20px;
-          background-color: #b48e62;
-          color: white;
-        }
-    
-        .btn-prev {
-          left: 20px;
-          background-color: #999;
-          color: white;
-        }
-    
-        .btn-next:hover {
-          background-color: #777;
-        }
-        .btn-prev:hover {
-          background-color: #a07b53;
-        }
-        </style>
-<body>
-    <img src="assets/flower-left.png" alt="bunga kiri" class="flower"> 
-    <img src="assets/flower-right.png" alt="bunga kanan" class="flower"> 
-  
-    <div class="invitation-container">
-        <div class="invitation-card">
-            <h2>Bismillahirrahmanirrahim</h2>
-            <h3>Assalamu’alaikum Warahmatullahi Wabarakatuh</h3>
-            <p class="invitation-text">
-                Kepada teman-teman sekalian, sebelumnya saya ingin mengucapkan permohonan maaf karena harus menyampaikan berita bahagia ini melalui pesan singkat. Dengan penuh rasa syukur dan kebahagiaan, saya bermaksud mengundang teman-teman untuk hadir serta memberikan doa restu dalam acara pernikahan kami yang insyaAllah akan dilaksanakan pada:
-            </p>
-            <div>
-                <div class="event">
-                    <div class="event-left">
-                        <div class="event-day">Sabtu</div>
-                        <div class="event-date">29</div>
-                        <div class="event-month">Agustus 2025</div>
-                    </div>
-                    <div class="event-right">
-                        <div class="event-title">AKAD NIKAH</div>
-                        <div class="event-detail">
-                            <img src="assets/jam.png" alt="jam"> Pukul 09.00 s/d Selesai.
-                        </div>
-                        <div class="event-detail">
-                            <img src="assets/lokasi.png" alt="lokasi"> Bertempat di kediaman mempelai wanita
-                        </div>
-                    </div>
-                </div>
-            
-                <div class="separator"></div>
-            
-                <div class="event">
-                    <div class="event-left">
-                        <div class="event-day">Minggu</div>
-                        <div class="event-date">30</div>
-                        <div class="event-month">Agustus 2025</div>
-                    </div>
-                    <div class="event-right">
-                        <div class="event-title">RESEPSI</div>
-                        <div class="event-detail">
-                            <img src="assets/jam.png" alt="jam"> Pukul 11.00 s/d 16.00 WIB
-                        </div>
-                        <div class="event-detail">
-                            <img src="assets/lokasi.png" alt="lokasi"> Lokasi di Gedung USTI/STMIK Amik, Riau
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <button class="btn-prev" onclick="goToPrevious()">Previous</button>
-    <button class="btn-next" onclick="goToNext()">Next</button>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Undangan Pernikahan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-    <script>
-        function goToPrevious() {
-        window.location.href = "page3.html";
-        }
-        function goToNext() {
-        window.location.href = "page5.html";
-        }
-    </script>
-  </body>  
+    body {
+      font-family: 'Work Sans', sans-serif;
+      background-color: #f4efe9;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 10px;
+      position: relative;
+    }
+
+    /* DESKTOP WRAPPER */
+    .desktop-wrapper {
+      display: block;
+      max-width: 700px;
+      width: 100%;
+    }
+
+    /* DESKTOP STYLE */
+    .desktop {
+      display: block;
+      background: white;
+      border-radius: 10px;
+      border: 3px solid #c8a045;
+      outline: 30px solid white;
+      padding: 40px;
+      position: relative;
+    }
+
+    .desktop h2,
+    .desktop h3 {
+      font-family: 'Times New Roman', serif;
+      font-style: italic;
+      color: black;
+      text-align: center;
+    }
+
+    .desktop h2 {
+      font-size: 28px;
+    }
+
+    .desktop h3 {
+      font-size: 24px;
+      margin-bottom: 40px;
+    }
+
+    .invitation-text {
+      font-size: 20px;
+      margin-bottom: 50px;
+      color: #0a0a0a;
+      text-align: center;
+    }
+
+    .event {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px 0;
+    }
+
+    .event-left {
+      width: 30%;
+      text-align: center;
+    }
+
+    .event-day {
+      background: #c8a045;
+      color: white;
+      padding: 5px 15px;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+
+    .event-date {
+      font-size: 48px;
+      font-weight: bold;
+      margin-top: 10px;
+      color: black;
+    }
+
+    .event-month {
+      font-size: 14px;
+      color: #777;
+    }
+
+    .event-right {
+      width: 65%;
+      text-align: left;
+    }
+
+    .event-title {
+      font-size: 20px;
+      font-weight: bold;
+      color: black;
+      margin-bottom: 8px;
+    }
+
+    .event-detail {
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      color: black;
+      margin-bottom: 5px;
+    }
+
+    .event-detail img {
+      width: 18px;
+      height: 18px;
+      margin-right: 10px;
+    }
+
+    .separator {
+      height: 2px;
+      background: #c8a045;
+      margin: 20px 0;
+    }
+
+    .flower {
+      position: absolute;
+      width: 120px;
+      z-index: 10;
+      top: -60px;
+    }
+
+    .flower-left {
+      left: 0;
+    }
+
+    .flower-right {
+      right: 0;
+    }
+
+    /* MOBILE WRAPPER */
+    .mobile-wrapper {
+      display: none;
+      max-width: 400px;
+      width: 100%;
+      padding: 2rem 1rem 4rem;
+      background: #fff;
+      border-radius: 2rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .mobile-wrapper h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .mobile-wrapper p {
+      font-size: 0.95rem;
+      margin: 0.4rem 0;
+    }
+
+    .icon-line {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      justify-content: flex-start;
+      margin: 0.4rem 0;
+      padding-left: 24px;
+    }
+
+    .icon-line img {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+
+    .divider-img {
+      margin: 1.5rem 0;
+      width: 90px;
+    }
+
+    /* BUTTON */
+    .btn-nav {
+      position: fixed;
+      bottom: 20px;
+      padding: 0.6rem 1.2rem;
+      font-size: 0.9rem;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      z-index: 100;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .btn-prev {
+      left: 20px;
+      background-color: #999;
+      color: white;
+    }
+
+    .btn-next {
+      right: 20px;
+      background-color: #b48e62;
+      color: white;
+    }
+
+    /* RESPONSIVE TOGGLE */
+    @media screen and (max-width: 768px) {
+      .desktop-wrapper {
+        display: none;
+      }
+
+      .mobile-wrapper {
+        display: block;
+      }
+
+      .flower {
+        display: none;
+      }
+
+      body {
+        padding: 20px;
+        align-items: flex-start;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Dekorasi -->
+  <img src="assets/flower-left.png" alt="Bunga Kiri" class="flower flower-left">
+  <img src="assets/flower-right.png" alt="Bunga Kanan" class="flower flower-right">
+
+  <!-- DESKTOP -->
+  <div class="desktop-wrapper">
+    <div class="desktop">
+      <h2>Bismillahirrahmanirrahim</h2>
+      <h3>Assalamu’alaikum Warahmatullahi Wabarakatuh</h3>
+      <p class="invitation-text">
+        Kepada Yth. Bapak/Ibu/Saudara/i, <br>
+        Kepada teman-teman sekalian, sebelumnya saya ingin mengucapkan permohonan maaf karena harus menyampaikan berita bahagia ini melalui pesan singkat. Dengan penuh rasa syukur dan kebahagiaan, saya bermaksud mengundang teman-teman untuk hadir serta memberikan doa restu dalam acara pernikahan kami yang insyaAllah akan dilaksanakan pada:
+      </p>
+
+      <div class="event">
+        <div class="event-left">
+          <div class="event-day">Sabtu</div>
+          <div class="event-date">29</div>
+          <div class="event-month">Agustus 2025</div>
+        </div>
+        <div class="event-right">
+          <div class="event-title">AKAD NIKAH</div>
+          <div class="event-detail"><img src="assets/jam.png"> Pukul 09.00 s/d Selesai</div>
+          <div class="event-detail"><img src="assets/lokasi.png"> Kediaman mempelai wanita</div>
+        </div>
+      </div>
+
+      <div class="separator"></div>
+
+      <div class="event">
+        <div class="event-left">
+          <div class="event-day">Minggu</div>
+          <div class="event-date">30</div>
+          <div class="event-month">Agustus 2025</div>
+        </div>
+        <div class="event-right">
+          <div class="event-title">RESEPSI</div>
+          <div class="event-detail"><img src="assets/jam.png"> Pukul 11.00 s/d 16.00 WIB</div>
+          <div class="event-detail"><img src="assets/lokasi.png"> Gedung USTI / STMIK Amik Riau</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MOBILE -->
+  <div class="mobile-wrapper">
+    <h2>AKAD NIKAH</h2>
+    <p>Sabtu, 29 Agustus 2025</p>
+    <div class="icon-line">
+      <img src="assets/jam.png" alt="Jam">
+      <span>09.00 s/d Selesai</span>
+    </div>
+    <div class="icon-line">
+      <img src="assets/lokasi.png" alt="Lokasi">
+      <span>Kediaman mempelai wanita</span>
+    </div>
+
+    <img src="assets/flower-left.png" alt="Bunga" class="divider-img" />
+
+    <h2>RESEPSI</h2>
+    <p>Minggu, 30 Agustus 2025</p>
+    <div class="icon-line">
+      <img src="assets/jam.png" alt="Jam">
+      <span>11.00 s/d 16.00 WIB</span>
+    </div>
+    <div class="icon-line">
+      <img src="assets/lokasi.png" alt="Lokasi">
+      <span>Gedung USTI / STMIK Amik Riau</span>
+    </div>
+  </div>
+
+  <!-- Button Navigasi -->
+  <button class="btn-nav btn-prev" onclick="window.location.href='page3.html'">Previous</button>
+  <button class="btn-nav btn-next" onclick="window.location.href='page5.html'">Next</button>
+
+</body>
 </html>
