@@ -4,8 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Lokasi Pernikahan</title>
-  <link rel="stylesheet" href="Lokasi.css">
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -26,10 +24,22 @@
       color: #333;
       min-height: 100vh;
       position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .wrapper {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
     }
 
     .container-desktop, .container-mobile {
       display: none;
+      width: 100%;
     }
 
     /* Desktop style */
@@ -38,8 +48,9 @@
     }
 
     .container-desktop .title {
-      font-family: 'Great Vibes', cursive;
-      font-size: 2.5rem;
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 700;
+      font-size: 2rem;
       text-align: center;
       margin-bottom: 1.5rem;
       color: #4a3b2c;
@@ -48,11 +59,9 @@
     .container-desktop .card {
       max-width: 850px;
       margin: 0 auto;
-      background: var(--putih);
       border-radius: 1rem;
       padding: 1rem;
       text-align: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       display: flex;
       gap: 1.5rem;
       align-items: center;
@@ -68,12 +77,23 @@
     }
 
     .container-desktop .info {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
       font-size: 1rem;
       max-width: 300px;
       text-align: left;
+      flex-direction: row;
     }
 
-    .container-desktop .info p {
+    .container-desktop .info img {
+      width: 20px;
+      height: 20px;
+      margin-top: 4px;
+      flex-shrink: 0;
+    }
+
+    .container-desktop .info-text p {
       margin-bottom: 1rem;
     }
 
@@ -94,12 +114,6 @@
     .container-desktop .button:hover {
       background-color: var(--coklat-tua);
       color: var(--putih);
-    }
-    .container-desktop .info img {
-      width: 1em;
-      height: 1em;
-      vertical-align: middle;
-      margin-right: 6px;
     }
 
     /* Mobile style */
@@ -210,44 +224,49 @@
 </head>
 <body>
 
-  <!-- Desktop Version -->
-  <div class="container-desktop">
-    <div class="title">Lokasi</div>
-    <div class="card">
-      <iframe class="map"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.487241895286!2d101.3837268!3d0.4557527!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d5a900690073db%3A0x24244b7d5e7868b8!2sSTIMIK%20AMIK%20RIAU!5e0!3m2!1sid!2sid!4v1711526096765!5m2!1sid!2sid"
-        allowfullscreen=""
-        loading="lazy">
-      </iframe>
-      <div class="info">
-        <p><img src="assets/lokasi.png" alt="Ikon Lokasi"> Lokasi pesta di<br><b>Gedung USTI / STMIK Amik Riau</b></p>
-        <a href="https://www.google.com/maps/place/STIMIK+AMIK+RIAU/@0.4557527,101.3837268,14.52z/data=!4m6!3m5!1s0x31d5a900690073db:0x24244b7d5e7868b8!8m2!3d0.4557397!4d101.4026019!16s%2Fg%2F11y43r887w?entry=ttu"
-           class="button" 
-           target="_blank">
-           Buka di Google Maps
-        </a>
+  <div class="wrapper">
+    <!-- Desktop Version -->
+    <div class="container-desktop">
+      <div class="title">Lokasi</div>
+      <div class="card">
+        <iframe class="map"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.487241895286!2d101.3837268!3d0.4557527!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d5a900690073db%3A0x24244b7d5e7868b8!2sSTIMIK%20AMIK%20RIAU!5e0!3m2!1sid!2sid!4v1711526096765!5m2!1sid!2sid"
+          allowfullscreen=""
+          loading="lazy">
+        </iframe>
+        <div class="info">
+          <img src="assets/lokasi.png" alt="Ikon Lokasi">
+          <div class="info-text">
+            <p>Lokasi pesta di<br><b>Gedung USTI / STMIK Amik Riau</b></p>
+            <a href="https://www.google.com/maps/place/STIMIK+AMIK+RIAU/@0.4557527,101.3837268,14.52z/data=!4m6!3m5!1s0x31d5a900690073db:0x24244b7d5e7868b8!8m2!3d0.4557397!4d101.4026019!16s%2Fg%2F11y43r887w?entry=ttu"
+               class="button" 
+               target="_blank">
+               Buka Maps
+            </a>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- Mobile Version -->
-  <div class="container-mobile">
-    <h1>Lokasi</h1>
-    <div class="map-container">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15951.845935798957!2d101.3931125!3d0.4486579!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d5aeadd0b5e9ed%3A0x499e4c99ffc29c00!2sUniversitas%20Sains%20dan%20Teknologi%20Indonesia!5e0!3m2!1sid!2sid!4v1712389580000!5m2!1sid!2sid"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
+    <!-- Mobile Version -->
+    <div class="container-mobile">
+      <h1>Lokasi</h1>
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15951.845935798957!2d101.3931125!3d0.4486579!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d5aeadd0b5e9ed%3A0x499e4c99ffc29c00!2sUniversitas%20Sains%20dan%20Teknologi%20Indonesia!5e0!3m2!1sid!2sid!4v1712389580000!5m2!1sid!2sid"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+      <div class="location-info">
+        <img src="assets/lokasi.png" alt="Ikon Lokasi">
+        <div>Lokasi pesta di<br><b>Gedung USTI / STMIK Amik Riau</b></div>
+      </div>
+      <button class="btn-map" onclick="window.open('https://www.google.com/maps/dir//F92X%2B2C6+Universitas+Sains+dan+Teknologi+Indonesia,+Jl.+Purwodadi+Indah+No.KM.+10,+Sidomulyo+Bar.,+Kec.+Tampan,+Kota+Pekanbaru,+Riau+28294/@0.4486579,101.3931125,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x31d5aeadd0b5e9ed:0x499e4c99ffc29c00!2m2!1d101.3976186!2d0.4486579?hl=id&entry=ttu', '_blank')">
+        Lihat Maps
+      </button>
     </div>
-    <div class="location-info">
-      <img src="assets/lokasi.png" alt="Ikon Lokasi">
-      <div>Lokasi pesta di Gedung USTI / STMIK Amik Riau</div>
-    </div>
-    <button class="btn-map" onclick="window.open('https://www.google.com/maps/dir//F92X%2B2C6+Universitas+Sains+dan+Teknologi+Indonesia,+Jl.+Purwodadi+Indah+No.KM.+10,+Sidomulyo+Bar.,+Kec.+Tampan,+Kota+Pekanbaru,+Riau+28294/@0.4486579,101.3931125,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x31d5aeadd0b5e9ed:0x499e4c99ffc29c00!2m2!1d101.3976186!2d0.4486579?hl=id&entry=ttu', '_blank')">
-      Lihat Maps
-    </button>
   </div>
 
   <!-- Navigasi -->

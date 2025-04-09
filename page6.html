@@ -17,9 +17,17 @@
       background-color: #fdf6ec;
       color: #333;
       text-align: center;
-      padding: 20px;
-      position: relative;
       min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .center-wrapper {
+      width: 100%;
+      max-width: 1000px;
+      padding: 40px 20px;
     }
 
     /* === DESKTOP STYLING === */
@@ -33,6 +41,7 @@
       align-items: center;
       gap: 20px;
       flex-wrap: wrap;
+      margin-top: 20px;
     }
 
     .desktop-column {
@@ -59,6 +68,7 @@
       left: 0;
       width: 200px;
       opacity: 0.6;
+      z-index: 0;
     }
 
     /* Tombol desktop */
@@ -73,7 +83,7 @@
       font-size: 0.95rem;
       cursor: pointer;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      z-index: 100;
+      z-index: 10;
     }
 
     .btn-next {
@@ -103,6 +113,7 @@
       flex-direction: column;
       align-items: center;
       gap: 10px;
+      margin-top: 20px;
     }
 
     .gallery-row {
@@ -126,6 +137,7 @@
       left: 0;
       width: 180px;
       pointer-events: none;
+      z-index: 0;
     }
 
     .btn-nav {
@@ -136,7 +148,7 @@
       border: none;
       border-radius: 50px;
       cursor: pointer;
-      z-index: 100;
+      z-index: 10;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
 
@@ -172,45 +184,47 @@
 </head>
 <body>
 
-  <!-- DESKTOP VERSION -->
-  <div class="desktop-wrapper">
-    <h2>OUR MEMORIES</h2>
-    <div class="desktop-gallery">
-      <div class="desktop-column">
-        <img src="assets/IMG_6753.JPG" alt="Memory 1">
-        <img src="assets/IMG_6679.JPG" alt="Memory 2">
+  <div class="center-wrapper">
+    <!-- DESKTOP VERSION -->
+    <div class="desktop-wrapper">
+      <h2>MEMORI</h2>
+      <div class="desktop-gallery">
+        <div class="desktop-column">
+          <img src="assets/IMG_6753.JPG" alt="Memory 1">
+          <img src="assets/IMG_6679.JPG" alt="Memory 2">
+        </div>
+        <img src="assets/IMG_6640.JPG" alt="Main Memory" class="large">
+        <div class="desktop-column">
+          <img src="assets/IMG_6672.JPG" alt="Memory 3">
+          <img src="assets/IMG_6615.JPG" alt="Memory 4">
+        </div>
       </div>
-      <img src="assets/IMG_6640.JPG" alt="Main Memory" class="large">
-      <div class="desktop-column">
-        <img src="assets/IMG_6672.JPG" alt="Memory 3">
-        <img src="assets/IMG_6615.JPG" alt="Memory 4">
-      </div>
+      <img src="assets/flower-page2.png" alt="Decorative Flower" class="decorative-flower">
+      <button class="btn-prev" onclick="goToPrevious()">Previous</button>
+      <button class="btn-next" onclick="goToNext()">Next</button>
     </div>
-    <img src="assets/flower-page2.png" alt="Decorative Flower" class="decorative-flower">
-    <button class="btn-prev" onclick="goToPrevious()">Previous</button>
-    <button class="btn-next" onclick="goToNext()">Next</button>
-  </div>
 
-  <!-- MOBILE VERSION -->
-  <div class="mobile-wrapper">
-    <h1>Our Memories</h1>
-    <div class="mobile-gallery">
-      <div class="gallery-row">
-        <img src="assets/IMG_6640.JPG" alt="Memori 1" class="memori1">
-        <img src="assets/IMG_6753.jpg" alt="Memori 2" class="memori2">
+    <!-- MOBILE VERSION -->
+    <div class="mobile-wrapper">
+      <h1>Memori</h1>
+      <div class="mobile-gallery">
+        <div class="gallery-row">
+          <img src="assets/IMG_6640.JPG" alt="Memori 1" class="memori1">
+          <img src="assets/IMG_6753.jpg" alt="Memori 2" class="memori2">
+        </div>
+        <div class="gallery-row">
+          <img src="assets/IMG_6672.jpg" alt="Memori 3" class="memori3">
+          <img src="assets/IMG_6615.jpg" alt="Memori 4" class="memori4">
+        </div>
+        <div class="gallery-row">
+          <img src="assets/IMG_6679.jpg" alt="Memori 5" class="memori5">
+          <img src="assets/IMG_6640.jpg" alt="Memori 6" class="memori6">
+        </div>
       </div>
-      <div class="gallery-row">
-        <img src="assets/IMG_6672.jpg" alt="Memori 3" class="memori3">
-        <img src="assets/IMG_6615.jpg" alt="Memori 4" class="memori4">
-      </div>
-      <div class="gallery-row">
-        <img src="assets/IMG_6679.jpg" alt="Memori 5" class="memori5">
-        <img src="assets/IMG_6640.jpg" alt="Memori 6" class="memori6">
-      </div>
+      <img src="assets/flower-page2.png" alt="Bunga Dekorasi" class="flower-bottom" />
+      <button class="btn-nav btn-prev" onclick="goToPrevious()">Previous</button>
+      <button class="btn-nav btn-next" onclick="goToNext()">Next</button>
     </div>
-    <img src="assets/flower-page2.png" alt="Bunga Dekorasi" class="flower-bottom" />
-    <button class="btn-nav btn-prev" onclick="goToPrevious()">Previous</button>
-    <button class="btn-nav btn-next" onclick="goToNext()">Next</button>
   </div>
 
   <script>

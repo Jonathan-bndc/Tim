@@ -258,6 +258,7 @@
 
       .mobile-wrapper {
         display: block;
+        margin: auto; /* ini penting agar vertikal dan horizontal center */
       }
 
       .flower {
@@ -266,10 +267,13 @@
 
       body {
         padding: 20px;
-        align-items: flex-start;
+        display: flex;
         justify-content: center;
+        align-items: center;
+        min-height: 100vh;
       }
     }
+
   </style>
 </head>
 <body>

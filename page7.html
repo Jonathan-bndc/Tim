@@ -15,15 +15,17 @@
 
     body {
       background-color: #fdf6ec;
-      text-align: center;
       min-height: 100vh;
-      position: relative;
       padding-bottom: 5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: all 0.3s ease;
     }
 
-    /* Desktop Styles */
-    .desktop-wrapper {
-      display: block;
+    body.centered-initial {
+      justify-content: center;
     }
 
     h2.desktop-title {
@@ -34,7 +36,7 @@
 
     .content {
       max-width: 600px;
-      margin: auto;
+      margin: 20px auto;
       font-size: 18px;
       color: #444;
       padding: 0 1rem;
@@ -57,25 +59,28 @@
     }
 
     .button.active {
-      background-color: blue;
+      background-color: #1a73e8;
       color: white;
     }
 
-    .gift-box,
-    .cashless-view {
-      position: relative;
-      max-width: 400px;
+    .gift-box-wrapper {
+      max-width: 420px;
       margin: 30px auto;
-      background: white;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2);
+      display: none;
     }
 
     .gift-box {
+      background: white;
+      padding: 50px;
+      border-radius: 20px;
+      box-shadow:
+        inset 0 0 0 10px white,
+        inset 0 0 0 12px #f0e2c2,
+        0 4px 20px rgba(0, 0, 0, 0.1);
+      transition: opacity 0.5s ease, transform 0.5s ease;
       opacity: 0;
       transform: translateY(50px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
+      line-height: 1.7;
     }
 
     .gift-box.show {
@@ -85,6 +90,73 @@
 
     .cashless-view {
       display: none;
+      margin: 30px auto;
+      text-align: center;
+      width: 100%;
+    }
+
+    .cashless-cards {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      padding: 30px 20px;
+    }
+
+    .cashless-card {
+      background-color: #fdfdfd;
+      border-radius: 15px;
+      padding: 20px 30px;
+      width: 400px;
+      box-shadow:
+        inset 0 0 0 6px white,
+        inset 0 0 0 8px #f0e2c2;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      text-align: left;
+    }
+
+    .card-left {
+      flex-shrink: 0;
+    }
+
+    .card-right {
+      flex-grow: 1;
+      text-align: left;
+    }
+
+    .bank-logo {
+      width: 80px;
+      height: auto;
+    }
+
+    .rekening {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+    .copy-btn {
+      background-color: #b9975b;
+      color: white;
+      padding: 5px 12px;
+      font-size: 14px;
+      border-radius: 20px;
+      margin-bottom: 6px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .atas-nama {
+      font-size: 14px;
+    }
+
+    .separator {
+      border: none;
+      border-top: 2px solid #b9975b;
+      margin: 20px 0;
+      width: 100vw;
     }
 
     .decorative-flower {
@@ -95,72 +167,6 @@
       opacity: 0.6;
     }
 
-    /* Mobile Styles */
-    .mobile-wrapper {
-      display: none;
-      padding: 2rem 1.5rem;
-    }
-
-    .box {
-      background-color: #b9975b;
-      padding: 2rem 1.5rem;
-      border-radius: 25px;
-      max-width: 450px;
-      width: 100%;
-      margin: 2rem auto;
-    }
-
-    .box h2 {
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin-bottom: 2rem;
-    }
-
-    .bank {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      margin: 1.8rem 0;
-      justify-content: center;
-    }
-
-    .bank img.bank-logo {
-      height: 36px;
-      width: auto;
-    }
-
-    .rekening {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-
-    .text-info {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: center;
-      gap: 0.1rem;
-    }
-
-    .text-info span {
-      font-size: 0.92rem;
-      font-weight: 400;
-    }
-
-    .text-info .rek {
-      color: #1a4dd8;
-      font-weight: 500;
-      font-size: 0.92rem;
-    }
-
-    .copy-icon {
-      width: 14px;
-      height: 14px;
-      cursor: pointer;
-    }
-
-    /* Navigation Buttons */
     .btn-nav {
       position: fixed;
       bottom: 20px;
@@ -193,96 +199,183 @@
       background-color: #a3824b;
     }
 
-    /* Responsive Control */
-    @media (max-width: 768px) {
-      .desktop-wrapper {
-        display: none;
-      }
-      .mobile-wrapper {
-        display: block;
-      }
+    /* Mobile styling */
+    .mobile-card-section {
+      display: none;
     }
 
-    @media (min-width: 769px) {
-      .desktop-wrapper {
-        display: block;
+    @media (max-width: 768px) {
+      .cashless-cards,
+      .buttons,
+      .gift-box-wrapper,
+      .gift-box,
+      .content,
+      h2.desktop-title {
+        display: none !important;
       }
-      .mobile-wrapper {
-        display: none;
+
+      .mobile-card-section {
+        margin-top: 40px;
+        padding: 20px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+
+      .mobile-card-wrapper {
+        background-color: #c2a060;
+        border-radius: 20px;
+        padding: 30px 24px;
+        max-width: 300px;
+        width: 100%;
+        text-align: center;
+      }
+
+      .mobile-card-wrapper h3 {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+
+      .mobile-card {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+        margin-bottom: 20px;
+      }
+
+      .mobile-card img.bank-logo {
+        width: 60px;
+      }
+
+      .info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex: 1;
+        text-align: left;
+      }
+
+      .info .rekening {
+        font-size: 16px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        margin-bottom: 4px;
+        color: #1a73e8;
+        cursor: pointer;
+      }
+
+      .info .rekening img {
+        width: 16px;
+        height: 16px;
+      }
+
+      .info .atas-nama {
+        font-size: 14px;
       }
     }
   </style>
 </head>
-<body>
-  <!-- Desktop View -->
-  <div class="desktop-wrapper">
-    <h2 class="desktop-title">Wedding Gift</h2>
-    <p class="content">Your blessings mean the world to us. However, if giving is your way of expressing love, we would gratefully accept it, as it would add to our happiness.</p>
-    <div class="buttons">
-      <button class="button" id="cashlessButton" onclick="toggleView('cashless')">Cashless</button>
-      <button class="button" id="weddingGiftButton" onclick="toggleView('gift')">Wedding Gift</button>
-    </div>
+<body class="centered-initial">
+  <h2 class="desktop-title">Wedding Gift</h2>
+  <p class="content">Your blessings mean the world to us. However, if giving is your way of expressing love, we would gratefully accept it, as it would add to our happiness.</p>
 
+  <div class="buttons">
+    <button class="button" id="cashlessButton" onclick="toggleView('cashless')">Cashless</button>
+    <button class="button" id="weddingGiftButton" onclick="toggleView('gift')">Wedding Gift</button>
+  </div>
+
+  <!-- Wedding Gift View -->
+  <div class="gift-box-wrapper" id="giftBoxWrapper">
     <div class="gift-box" id="giftBox">
       <h3>Kirim Hadiah</h3>
       <p>Anda dapat mengirim kado ke:<br>Jl. Bangau Sakti, Pekanbaru</p>
       <button class="button" onclick="copyToClipboard('Jl. Bangau Sakti, Pekanbaru')">Copy to Clipboard</button>
     </div>
-
-    <div class="cashless-view" id="cashlessView">
-      <h3>Cashless Gift</h3>
-      <p>Thank you for considering a cashless gift! Your generosity is greatly appreciated.</p>
-    </div>
-
-    <img src="assets/flower-page7.png" alt="Decorative Flower" class="decorative-flower">
   </div>
 
-  <!-- Mobile View -->
-  <div class="mobile-wrapper">
-    <div class="box">
-      <h2>TANDA KASIH</h2>
-      <div class="bank">
-        <img src="assets2/bni-logo.png" alt="BNI" class="bank-logo">
-        <div class="rekening">
-          <div class="text-info">
-            <span class="rek">12345678</span>
-            <span>Aisyah</span>
-          </div>
-          <img src="assets2/copy-icon.png" class="copy-icon" alt="Copy" onclick="copyToClipboard('12345678 - Aisyah')">
+  <!-- Cashless View -->
+  <div class="cashless-view" id="cashlessView">
+    <hr class="separator" />
+    <div class="cashless-cards">
+      <div class="cashless-card">
+        <div class="card-left">
+          <img src="assets/bca-logo.png" alt="BCA" class="bank-logo">
+        </div>
+        <div class="card-right">
+          <p class="rekening">12345678</p>
+          <button class="copy-btn" onclick="copyToClipboard('12345678 - Aisyah')">Copy to Clipboard</button>
+          <p class="atas-nama">Atas Nama : Aisyah</p>
         </div>
       </div>
 
-      <div class="bank">
-        <img src="assets2/bca-logo.png" alt="BCA" class="bank-logo">
-        <div class="rekening">
-          <div class="text-info">
-            <span class="rek">87654321</span>
-            <span>Jonathan</span>
+      <div class="cashless-card">
+        <div class="card-left">
+          <img src="assets/bni-logo.png" alt="BNI" class="bank-logo">
+        </div>
+        <div class="card-right">
+          <p class="rekening">87654321</p>
+          <button class="copy-btn" onclick="copyToClipboard('87654321 - Jonathan')">Copy to Clipboard</button>
+          <p class="atas-nama">Atas Nama : Jonathan</p>
+        </div>
+      </div>
+    </div>
+    <hr class="separator" />
+  </div>
+
+  <!-- Mobile Only -->
+  <div class="mobile-card-section">
+    <div class="mobile-card-wrapper">
+      <h3>TANDA KASIH</h3>
+      <div class="mobile-card">
+        <img src="assets/bni-logo.png" alt="BNI" class="bank-logo">
+        <div class="info">
+          <div class="rekening" onclick="copyToClipboard('12345678 - Aisyah')">
+            <img src="assets/copy-icon.png" alt="copy icon" />
+            12345678
           </div>
-          <img src="assets2/copy-icon.png" class="copy-icon" alt="Copy" onclick="copyToClipboard('87654321 - Jonathan')">
+          <div class="atas-nama">Aisyah</div>
+        </div>
+      </div>
+      <div class="mobile-card">
+        <img src="assets/bca-logo.png" alt="BCA" class="bank-logo">
+        <div class="info">
+          <div class="rekening" onclick="copyToClipboard('12345678 - Jonathan')">
+            <img src="assets/copy-icon.png" alt="copy icon" />
+            12345678
+          </div>
+          <div class="atas-nama">Jonathan</div>
         </div>
       </div>
     </div>
   </div>
 
+  <img src="assets/flower-page7.png" alt="Decorative Flower" class="decorative-flower">
   <button class="btn-nav btn-prev" onclick="location.href='page6.html'">Previous</button>
   <button class="btn-nav btn-next" onclick="location.href='page8.html'">Next</button>
 
   <script>
     function toggleView(view) {
+      document.body.classList.remove("centered-initial");
+
       const giftBox = document.getElementById("giftBox");
+      const giftBoxWrapper = document.getElementById("giftBoxWrapper");
       const cashlessView = document.getElementById("cashlessView");
       const cashlessButton = document.getElementById("cashlessButton");
       const weddingGiftButton = document.getElementById("weddingGiftButton");
 
       if (view === 'gift') {
         giftBox.classList.add("show");
+        giftBoxWrapper.style.display = "block";
         cashlessView.style.display = "none";
         cashlessButton.classList.remove("active");
         weddingGiftButton.classList.add("active");
       } else {
-        cashlessView.style.display = "block";
         giftBox.classList.remove("show");
+        giftBoxWrapper.style.display = "none";
+        cashlessView.style.display = "block";
         weddingGiftButton.classList.remove("active");
         cashlessButton.classList.add("active");
       }
