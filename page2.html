@@ -112,26 +112,42 @@
       font-weight: 500;
     }
 
+
     /* ==== Tombol Navigasi ==== */
-    .btn-next, .btn-prev {
+    .btn-next,
+    .btn-prev {
       position: fixed;
       bottom: 20px;
-      background-color: #b48e62;
       color: white;
       border: none;
-      border-radius: 50px;
-      padding: 0.6rem 1.2rem;
-      font-size: 0.95rem;
+      border-radius: 999px;
+      padding: 0.6rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 500;
       cursor: pointer;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
       z-index: 100;
+      transition: background-color 0.3s ease;
     }
 
-    .btn-next { right: 20px; }
-    .btn-prev { left: 20px; }
+    .btn-next {
+      right: 20px;
+      background-color: #b48e62;
+    }
 
-    .btn-next:hover { background-color: #777; }
-    .btn-prev:hover { background-color: #a07b53; }
+    .btn-prev {
+      left: 20px;
+      background-color: #999999;
+    }
+
+    .btn-next:hover {
+      background-color: #99764f;
+    }
+
+    .btn-prev:hover {
+      background-color: #7a7a7a;
+    }
+
 
     /* ======= Responsive Rules ======= */
     @media (max-width: 768px) {
